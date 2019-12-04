@@ -9,7 +9,7 @@
 <div class="container produtobox">
   <div class="row">
     <div class="col-sm-6">
-      <img class="imgproduto" src="<?php echo $url; ?>/View/img/produtos/<?php echo $produto->getImagem(); ?>">
+      <img class="imgproduto" src="<?php echo $url; ?>/view/img/produtos/<?php echo $produto->getImagem(); ?>">
     </div>
     <div class="col-sm-6">
       <h2><?php echo $produto->getNome(); ?></h2>

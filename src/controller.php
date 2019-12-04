@@ -11,7 +11,9 @@
     $view = "";
 
     //CONFIG
-    $url = "http://localhost/fitchef/src";
+    $url = "http://www.fitchef.web70111.uni5.net";
+    //$url = "http://localhost/fitchef/src";
+
 
     switch($router){
 
@@ -200,6 +202,7 @@
             $view = "home.php";
         break; 
     }
+
 
  
     include "view/{$view}";

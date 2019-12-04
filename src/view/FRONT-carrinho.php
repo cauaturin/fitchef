@@ -39,7 +39,7 @@
                     
                         <div class="col-sm-3">
 
-                        <img width="100%" src="<?php echo $url.'/View/img/produtos/'.$produto->getImagem(); ?>">
+                        <img width="100%" src="<?php echo $url.'/view/img/produtos/'.$produto->getImagem(); ?>">
                         
 
                         </div>

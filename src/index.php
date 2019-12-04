@@ -1,3 +1,3 @@
 <?php
-    header("location: http://http://localhost/fitchef/produto/listar");
+    //header("location: http://http://localhost/fitchef/produto/listar");
     ?>
