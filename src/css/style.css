@@ -1,0 +1,282 @@
+.barra{
+    height: 75px;
+    background-color: #8EA84A; 
+    padding: 0px;
+  /*  background-color: #ED7A37;*/
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+}
+
+.carousel-item {
+    max-height: 600px;
+}
+
+.destaque{
+    text-align: center;
+    padding: 30px;
+}
+
+.texto{
+    text-align: center;
+    font-family: monospace;
+}
+
+#logo{
+    border-radius: 600px;
+    width:50px;
+    height:50px;
+}
+
+.navbar-nav{
+    text-align: center;
+}
+
+
+.rodape{
+    /* background-color:  #93367C ;*/
+    background-color: #8EA84A;
+    color: white;
+    min-height: 300px;
+    padding-bottom: 10px;
+    
+}
+.buscasite{
+    margin-right: 20px;
+}
+
+.titulo-quemsomos{
+    text-align: center;
+}
+
+.nav-item{
+    padding: 15px;;
+}
+
+.navbar-collapse{
+    background-color: #8EA84A;
+}
+
+.imgestatica{
+    width: 100%;
+    max-height: 500px;
+}
+
+.sociais{
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+
+.horizontal_dotted_line{
+    border-bottom: 1px dotted black;
+    width: 100%;
+  } 
+
+.carrinho{
+    text-align: center;
+    padding: 30px;
+    margin-top: 100px;
+    margin-bottom: 75px;
+}
+
+.imgproduto{
+    width: 100%;
+    max-width: 545px;
+    height: 359px;    
+}
+
+.produtobox{
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.atendimento{
+    margin-bottom: 30px;
+}
+
+.faceinsta{
+    padding: 15px;
+}
+
+.carousel {
+    margin-top: -20px;
+
+}
+
+
+.contatolocal{
+    margin-top:120px;
+}
+.pricequant{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.barranav{
+    margin-bottom: 75px;
+}
+
+.textoproduto{
+    padding: 40px;
+    color: gray;
+}
+
+.horizontal_dotted_line{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.carrinhobox{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-right: 150px;
+    padding-left: 150px;
+   
+}
+
+.pratos{
+    margin-top: 50px;
+}
+
+.cardapiotitulo{
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+}
+
+.prato-feito-opcao{
+    text-decoration: none;
+    color:black;
+}
+
+.prato-feito-opcao:hover{
+    color:black;
+
+}
+
+.boxingrediente{
+    margin-bottom: 100px;
+    margin-top: 30px;
+    
+}
+
+.product-img{
+    width: 100%;
+    max-width: 545px;
+    height: 359px; 
+    margin-bottom: 60px;  
+}
+
+.titulofaixa{
+    /*background-color:#8EA84A;*/
+    background-color: #ED7A37;
+    text-align: center;
+    font-size: xx-large;
+
+}
+.titulo{
+    color: white;
+}
+.sectiongray{
+    background-color: rgb(231, 231, 231);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 500px;
+    margin-bottom: -100px;
+}
+
+.carrintable{
+
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+  
+    min-height: 300px;
+}
+.tabelacarrinho{
+    padding: 50px;
+    
+}
+
+.sobremesa{
+    margin-top: 50px;
+}
+
+
+.faixasobremesa{
+    margin-top: 50px;
+    background-color: #ED7A37;
+    text-align: center;
+    font-size: xx-large;
+}
+.ingredientes{
+    margin-top: 50px;
+    
+}
+
+.porcoes{
+    margin-top: 20px ;
+}
+
+.quemsomos{
+    margin-top: -60px;
+}
+
+.carrincontainer{
+    height: 300px;
+    border: solid 1px silver;
+}
+
+.fretecontainer{
+    height: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.fa-truck{
+    padding: 10px;
+}
+
+.login-detalhes{
+
+    text-align: left;
+    color: white;
+  
+    
+}   
+
+.login{
+    
+    border-radius: 20px;
+    background-color: #ED7A37;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.forget{
+    color:aquamarine;
+    text-decoration:none;
+    font-weight:lighter;
+}
+
+.forget:hover{
+    text-shadow: 1px 1px 2px black; 
+    text-decoration: none;
+}
+   
+
+.card-img-top{
+    height: 158px;
+    
+}
+
+.btn{
+    background-color:#8EA84A;
+    color: white;
+}
