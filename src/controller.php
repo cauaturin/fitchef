@@ -203,7 +203,7 @@
             $obj = new \FITCHEF\API\CalcularFrete;
             $frete = $obj->frete;
 
-            $view = "carrinho.php";
+            $view = "FRONT-carrinho.php";
         break;
 
 

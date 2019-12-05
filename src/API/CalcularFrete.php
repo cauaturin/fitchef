@@ -1,7 +1,7 @@
 <?php
 
-namespace LOJA\API; 
-use LOJA\Model\Frete;
+namespace FITCHEF\API; 
+use FITCHEF\Model\Frete;
 class CalcularFrete{
 
    public $frete;
