@@ -32,24 +32,29 @@
                 <div>
                     <div class="row">
 
-                        <div class="col-sm-3 tabelacarrinho">
+                        <div class="col-sm-4 tabelacarrinho">
                         <p><?php echo $produto->getNome(); ?></p>
                         
                         </div>
                     
-                        <div class="col-sm-3">
+                        <div class="col-sm-2">
 
                         <img width="100%" src="<?php echo $url.'/view/img/produtos/'.$produto->getImagem(); ?>">
                         
 
                         </div>
 
-                        <div class="col-sm-3 tabelacarrinho">
+                        <div class="col-sm-2 tabelacarrinho">
                         <p><?php echo $produto->getDescricao(); ?></p>
                         
                         </div>
 
-                        <div class="col-sm-3 tabelacarrinho">
+                        <div class="col-sm-2 tabelacarrinho">
+                        <p><?php echo $produto->getDescricao(); ?></p>
+                        
+                        </div>
+
+                        <div class="col-sm-2 tabelacarrinho">
                         
                         <a href="<?php echo $url; ?>/carrinho/remover/<?php echo $produto->getId() ?>" class="btn">Remover</a>
                         </div>
@@ -84,5 +89,18 @@
         </div>
     </div>
 </div>
+
+    <form method="post" action="<?php echo $url; ?>/frete/calcular">
+        <label>Frete</label>
+        <input type="text" size="20" name="cep"/>
+        <button>Calcular</button>
+    </form>
+
+    <?php 
+        if(isset($_POST['cep'])){
+            echo "<p>Preço: R$ ".$frete->getValor()."</p>";
+            echo "<p>Entrega: R$ ".$frete->getPrazoEntrega()." dias</p>";
+        }
+        ?>
 
 <?php include "FRONT-footer.php" ?>
