@@ -10,22 +10,9 @@
 
     $view = "";
 
-   $servidor = "TEST";
-   if($servidor =="TEST"){
-       $url = "http://localhost/fitchef/src";
-       $serverHost = "localhost";
-       $serverDB = "fitchef";
-       $serverUser = "root";
-       $serverPass = "";
-       $cepOrigem = "23080-020";
-   }else{
-        $url = "http://www.fitchef.web70111.uni5.net";
-        $serverHost = "mysql17-farm70.uni5.net";
-        $serverDB = "fitchef";
-        $serverUser = "fitchef";
-        $serverPass = "senac10058";
-        $cepOrigem = "23080-020";
-   }
+    //CONFIG
+    //$url = "http://www.fitchef.web70111.uni5.net";
+    $url = "http://localhost/fitchef/src";
 
 
     switch($router){
@@ -40,7 +27,7 @@
             
             $obj = new \FITCHEF\API\ClienteCadastrar;
             $msg = $obj->msg;
-            $view = "form-cliente.php";
+            $view = "FRONT-logincadastro.php";
             break;
 
         case 'clientelistar':
@@ -198,9 +185,7 @@
         break;
 
         case 'carrinhoremover':
-        
             $obj = new \FITCHEF\API\CarrinhoRemover;
-           
             $view = "FRONT-carrinho.php";
         break;
 
@@ -211,14 +196,20 @@
             $view = "lista-produto.php";
         break;
 
-
         case 'fretecalcular':
             $obj = new \FITCHEF\API\CalcularFrete;
             $frete = $obj->frete;
-
             $view = "FRONT-carrinho.php";
         break;
 
+        case 'clientepainel':
+            $view = "FRONT-cliente-painel.php";
+        break;
+
+        case 'clientelogar':
+            $obj = new \FITCHEF\API\ClienteLogar($url);
+            $view = "FRONT-logincadastro.php";
+        break;
 
         default:
             $view = "home.php";

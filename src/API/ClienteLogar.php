@@ -4,15 +4,16 @@ namespace FITCHEF\API;
 use FITCHEF\DAO\DAOCliente;
 use FITCHEF\model\Cliente;
 
+
 class ClienteLogar{
 
     public $msg;
 
-    function __construct(){
+    function __construct($url){
 
 if($_POST){
 
-    
+   
         
         try{
             //CRIAMOS UM OBJETO usuario
@@ -20,17 +21,17 @@ if($_POST){
             $obj->setEmail($_POST['email']);
             $obj->setSenha($_POST['senha']);
 
-            
-
            $DAO = new DAOCliente();
            $result = $DAO->buscaPorNomeSenha($obj);
-
+           
            if($result){
-            $_SESSION['clienteid'] = $result['id'];
+            
+            $_SESSION['clienteid'] = $result['pk_cliente'];
             $_SESSION['clientenome'] = $result['nome'];
-
-                header("location: http://localhost/fitchef/painel/adm");
+                
+                header("location:{$url}/cliente/painel");
            }else{
+            
                $this->msg = "Cliente/Senha Inválidos";
            }
            

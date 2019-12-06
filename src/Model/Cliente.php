@@ -11,6 +11,7 @@ class Cliente{
     private $cpf;
     private $endereco;
     private $cep;
+    private $senha;
     
     
 
@@ -85,6 +86,16 @@ class Cliente{
     public function setCep($cep){
         if($cep==="") throw new \Exception('Cep Inválido');
         $this->cep = $cep;
+        
+    }
+
+    public function getSenha(){
+        return $this->senha;
+    }
+    
+    public function setSenha($senha){
+        if($senha==="") throw new \Exception('Senha Inválida');
+        $this->senha = $senha;
         
     }
 

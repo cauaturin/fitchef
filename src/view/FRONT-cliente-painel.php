@@ -1,9 +1,6 @@
 <?php require_once "FRONT-cliente-header.php"; ?>
 
 
-
-
-
 <section class="container">
     
     <?php echo $_SESSION['clientenome']; ?> |
@@ -22,12 +19,6 @@
 
     
 </section> 
-
-
-
-
-
-
 
 
 

@@ -19,6 +19,7 @@
             $obj->setCPF($_POST['cpf']);
             $obj->setEndereco($_POST['endereco']);
             $obj->setCep($_POST['cep']);
+            $obj->setSenha($_POST['senha']);
         
             $DAO = new DAOCliente();
             $this->msg = $DAO->cadastrar($obj);

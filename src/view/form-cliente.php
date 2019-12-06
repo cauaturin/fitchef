@@ -1,4 +1,5 @@
 <?php include "view/header.php" ?>
+
 <form class="form-horizontal" method="post" action="cadastrar">
         <fieldset>
 
@@ -55,6 +56,14 @@
                 <label class="col-md-4 control-label" for="">CEP</label>
                 <div class="col-md-4">
                     <input id="" name="cep" type="text" placeholder="" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="">CEP</label>
+                <div class="col-md-4">
+                    <input id="" name="senha" type="password" placeholder="" class="form-control input-md">
 
                 </div>
             </div>

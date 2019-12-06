@@ -7,7 +7,7 @@
 	
 
 		<div class="col-sm-6 login-detalhes">
-			<form class="form-horizontal">
+			<form method="post" action="<?php echo $url;?>/cliente/logar" class="form-horizontal">
 			<fieldset>
 
 			<!-- Form Name -->
@@ -15,9 +15,9 @@
 
 			<!-- Text input-->
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="email-login">E-mail</label>  
+			  <label class="col-md-4 control-label" for="email">E-mail</label>  
 			  <div class="col-md-9">
-			  <input id="email-login" name="email-login" type="text" placeholder="" class="form-control input-md" required="">
+			  <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
 			    
 			  </div>
 			</div>
@@ -26,7 +26,7 @@
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="senha-login">Senha</label>
 			  <div class="col-md-9">
-			    <input id="senha-login" name="senha-login" type="password" placeholder="" class="form-control input-md" required="">
+			    <input id="senha" name="senha" type="password" placeholder="" class="form-control input-md" required="">
 			    <a href="#"><span class="forget help-block">Esqueci minha senha</span></a>
 			  </div>
 			</div>
@@ -46,16 +46,19 @@
 
 	<div class="col-sm-6 login-detalhes">
 
-			<form class="form-horizontal">
+			<form method="post" action="<?php echo $url;?>/cliente/cadastrar" class="form-horizontal">
 			<fieldset>
 
 			<!-- Form Name -->
 			<legend>Cadastre-se</legend>
 
+			
+<?php include "mensagem.php"; ?>
+
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="nomecompleto">Nome completo</label>  
+			  <label class="col-md-4 control-label" for="nome">Nome completo</label>  
 			  <div class="col-md-9">
-			  <input id="nomecompleto" name="nomecompleto" type="text" placeholder="" class="form-control input-md" required="">
+			  <input id="nome" name="nome" type="text" placeholder="" class="form-control input-md" required="">
 			    
 			  </div>
 			</div>
@@ -123,6 +126,9 @@
 			</div>
 
 			</fieldset>
+
+
+
 			</form>
 
 
