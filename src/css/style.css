@@ -246,7 +246,6 @@ body {
 
     text-align: left;
     color: white;
-  
     
 }   
 
@@ -279,4 +278,20 @@ body {
 .btn{
     background-color:#8EA84A;
     color: white;
+    
+}
+
+.btncalculafrete{
+    margin-top: 10px;
+}
+
+.painelcarrinho{
+    border: #8EA84A solid 5px ;
+}
+
+.nome-remove{
+    margin-top: 30px;
+}
+.containerfrete{
+    margin-top: 100px;
 }

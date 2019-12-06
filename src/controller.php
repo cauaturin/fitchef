@@ -10,9 +10,22 @@
 
     $view = "";
 
-    //CONFIG
-    //$url = "http://www.fitchef.web70111.uni5.net";
-    $url = "http://localhost/fitchef/src";
+   $servidor = "TEST";
+   if($servidor =="TEST"){
+       $url = "http://localhost/fitchef/src";
+       $serverHost = "localhost";
+       $serverDB = "fitchef";
+       $serverUser = "root";
+       $serverPass = "";
+       $cepOrigem = "23080-020";
+   }else{
+        $url = "http://www.fitchef.web70111.uni5.net";
+        $serverHost = "mysql17-farm70.uni5.net";
+        $serverDB = "fitchef";
+        $serverUser = "fitchef";
+        $serverPass = "senac10058";
+        $cepOrigem = "23080-020";
+   }
 
 
     switch($router){

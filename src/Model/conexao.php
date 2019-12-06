@@ -8,8 +8,7 @@ class Conexao{
     }
     public static function getInstance(){
         try {
-            //$conexao = new \PDO("mysql:host=mysql17-farm70.uni5.net; dbname=fitchef", "fitchef", "senac10058");
-            $conexao = new \PDO("mysql:host=localhost; dbname=fitchef", "root", "");
+            $conexao = new \PDO("mysql:host={$serverHost}; dbname={$serverDB}", "{$serverUser}", "{$serverPass}");
             $conexao->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $conexao->exec("set names utf8");
             

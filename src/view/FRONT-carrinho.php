@@ -9,14 +9,14 @@
 <div class="sectiongray">
     <div class="container">
         <div class="carrintable">
-        
-    <?php
+
+            <?php
         @$carrinho = $_SESSION['carrinho'];
 
         if($carrinho===null || empty($carrinho->getItems())){
             // Inicio HTML
             ?>
-                <?php include "FRONT-carrinhovazio.php" ?>
+            <?php include "FRONT-carrinhovazio.php" ?>
 
             <?php
             // Fim HTML
@@ -29,78 +29,72 @@
                 // Inicio HTML
             ?>
 
-                <div>
-                    <div class="row">
+            <div>
+                <div class="row painelcarrinho">
 
-                        <div class="col-sm-4 tabelacarrinho">
-                        <p><?php echo $produto->getNome(); ?></p>
-                        
-                        </div>
-                    
-                        <div class="col-sm-2">
+                    <div class="col-sm-3 tabelacarrinho">
+                        <p class="nome-remove"><?php echo $produto->getNome(); ?></p>
+                        <p><?php echo $produto->getPreco(); ?></p>
+
+                    </div>
+
+                    <div class="col-sm-3 tabelacarrinho">
 
                         <img width="100%" src="<?php echo $url.'/view/img/produtos/'.$produto->getImagem(); ?>">
-                        
 
-                        </div>
 
-                        <div class="col-sm-2 tabelacarrinho">
-                        <p><?php echo $produto->getDescricao(); ?></p>
-                        
-                        </div>
-
-                        <div class="col-sm-2 tabelacarrinho">
-                        <p><?php echo $produto->getDescricao(); ?></p>
-                        
-                        </div>
-
-                        <div class="col-sm-2 tabelacarrinho">
-                        
-                        <a href="<?php echo $url; ?>/carrinho/remover/<?php echo $produto->getId() ?>" class="btn">Remover</a>
-                        </div>
-
-                        </div>
                     </div>
-                
 
-     <?php   
+                    <div class="col-sm-3 tabelacarrinho">
+                        <p><?php echo $produto->getDescricao(); ?></p>
+
+                    </div>
+
+                    <div class="col-sm-3 tabelacarrinho">
+
+                        <a href="<?php echo $url; ?>/carrinho/remover/<?php echo $produto->getId() ?>"
+                            class="btn nome-remove">Remover</a>
+                    </div>
+                </div>
+            </div>
+            <?php   
      // Fim HTML
             }
         }
     ?>
-<!--
-                <div class="col-sm-4 fretecontainer">
+
+<div class="container containerfrete">
+<div class="row">
+
+            <div class="col-sm-6 container">
                 <i class="fas fa-truck fa-3x"></i>
+                <form method="post" action="<?php echo $url; ?>/frete/calcular">
+                    <label>Frete</label>
+                    <input type="text" size="6" name="cep" />
+                    <button class="btn btn-outline-secondary">Calcular</button>
+                </form>
+               
 
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="0000-000" aria-label="0000-000"
-                  aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">Calcular Frete</button>
-                </div>
-              </div>
-                </div> -->
-                
-
-            </div>
-
-            
-            </div>
         </div>
-    </div>
-</div>
 
-    <form method="post" action="<?php echo $url; ?>/frete/calcular">
-        <label>Frete</label>
-        <input type="text" size="20" name="cep"/>
-        <button>Calcular</button>
-    </form>
-
-    <?php 
+        <div class="col-sm-6 container">
+        <?php 
         if(isset($_POST['cep'])){
             echo "<p>Preço: R$ ".$frete->getValor()."</p>";
             echo "<p>Entrega: R$ ".$frete->getPrazoEntrega()." dias</p>";
         }
         ?>
+        </div>
 
+  
+
+        </div>
+        </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <?php include "FRONT-footer.php" ?>
