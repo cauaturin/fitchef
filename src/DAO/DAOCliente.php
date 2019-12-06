@@ -4,13 +4,14 @@ namespace FITCHEF\DAO;
 
 use FITCHEF\Model\Conexao;
 use FITCHEF\Model\Cliente;
+use FITCHEF\Model\Usuario;
 
 
     class DAOCliente{
 
     public function cadastrar(Cliente $cliente){
             $sql = "INSERT INTO cliente
-                VALUES (default, :nome, :telefone, :email, :cpf, :endereco, :cep)";
+                VALUES (default, :nome, :telefone, :email, :cpf, :endereco, :cep, :senha)";
 
             $con = Conexao::getInstance()->prepare($sql);
             $con->bindValue(":nome", $cliente->getNome());
@@ -19,7 +20,7 @@ use FITCHEF\Model\Cliente;
             $con->bindValue(":cpf", $cliente->getCPF());
             $con->bindValue(":endereco", $cliente->getEndereco());
             $con->bindValue(":cep", $cliente->getCEP());
-        
+            $con->bindValue(":senha", $cliente->getSenha());
   
 
             $con->execute();
@@ -61,8 +62,27 @@ use FITCHEF\Model\Cliente;
             
             return  $cliente;
 
-
         }
 
+        public function buscaPorNomeSenha(Cliente $cliente){
+            $sql = "SELECT * FROM cliente WHERE email = :email AND senha = :senha";
+
+
+            $con = Conexao::getInstance()->prepare($sql);
+            $con->bindValue(":email", $cliente->getEmail());
+            $con->bindValue(":senha", $cliente->getSenha());
+            $con->execute();
+
+
+
+
+                $obj = new Usuario();
+                $obj = $con->fetch(\PDO::FETCH_ASSOC);
+                return $obj;
+           
+            
+        }
+
+      
     }
 ?>
