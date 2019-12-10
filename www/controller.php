@@ -1,4 +1,6 @@
 <?php
+    use FITCHEF\includes\Config;
+
     require "includes/autoload.php";
     session_start();
    
@@ -6,30 +8,16 @@
     // ex.:admin/departamento/cadastrar/listar
     // model=departamento & action = listar
     @$router = $_GET['model'].$_GET['action'];
-    // router = departamentolistar
+    $view = "";
+
+    $config = new Config();
+    $url = $config->url;
     
-    
-    $servidor = "TEST";
-   if($servidor =="TEST"){
-       $url = "http://localhost/fitchef/src";
-       $serverHost = "localhost";
-       $serverDB = "fitchef";
-       $serverUser = "root";
-       $serverPass = "";
-       $cepOrigem = "23080-020";
-   }else{
-        $url = "http://www.fitchef.web70111.uni5.net";
-        $serverHost = "mysql17-farm70.uni5.net";
-        $serverDB = "fitchef";
-        $serverUser = "fitchef";
-        $serverPass = "senac10058";
-        $cepOrigem = "23080-020";
-   }
 
    
     //$url = "http://localhost/fitchef/src";
-    $url = "http://www.fitchef.web70111.uni5.net";
-    $view = "";
+    //$url = "http://www.fitchef.web70111.uni5.net";
+   
 
    
 

@@ -60,7 +60,7 @@ class ComposerStaticInitc4c2223dc828a5033311dfa8d9c36634
         ),
         'FITCHEF\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/www',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
