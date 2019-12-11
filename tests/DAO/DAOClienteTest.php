@@ -18,7 +18,8 @@ class DAOClienteTests extends TestCase
          $DAO->deleteALL();
      }
     public function testCadastro()
-    {
+    {       
+            //dados
             $c = new Cliente();
             //$c->setId();
             $c->setNome('Victor');
@@ -27,10 +28,16 @@ class DAOClienteTests extends TestCase
             $c->setCpf('145-146-146-12');
             $c->setEndereco('Senac');
             $c->setCep('Senac');
+            $c->setSenha('Senac');
 
-            
+            //execução
             $DAO = new DAOCliente();
-            $msg = $DAO->cadastrar($c);
-            $this->assertEquals($msg, "Cadastrado com sucesso");
+            $result = $DAO->cadastrar($c);
+
+            //testa resultados
+            $this->assertEquals($result, "Cadastrado com sucesso");
+
+            //remove os dados gerados
+            $DAO->deleteFromId($DAO->lastId);
     }}
 ?>

@@ -9,11 +9,20 @@ use FITCHEF\Model\Usuario;
 
     class DAOCliente{
 
-    public function cadastrar(Cliente $cliente){
-            $sql = "INSERT INTO cliente
-                VALUES (default, :nome, :telefone, :email, :cpf, :endereco, :cep, :senha)";
+    public $lastId;
 
-            $con = Conexao::getInstance()->prepare($sql);
+    public function cadastrar(Cliente $cliente){
+
+            $pdo = Conexao::getInstance(); // Cria objeto de conexão
+            $pdo->beginTransaction();// Inicia a transação
+
+            try{
+
+                $con = $pdo->prepare(
+                    "INSERT INTO cliente VALUES 
+                        (default, :nome, :telefone, :email, :cpf, :endereco, :cep, :senha)"
+                );
+            
             $con->bindValue(":nome", $cliente->getNome());
             $con->bindValue(":telefone", $cliente->getTelefone());
             $con->bindValue(":email", $cliente->getEmail());
@@ -21,15 +30,31 @@ use FITCHEF\Model\Usuario;
             $con->bindValue(":endereco", $cliente->getEndereco());
             $con->bindValue(":cep", $cliente->getCEP());
             $con->bindValue(":senha", $cliente->getSenha());
-  
-
             $con->execute();
+        
             
+            $this->lastId = $pdo->lastInsertId(); // Retorna o ID do cliente cadastrado
+            $pdo->commit(); // Finaliza a transação
             return "Cadastrado com sucesso";
+
+        }catch(Exception $e){
+            $this->lastId= 0;
+            $pdo->rollback();
+            return "Erro ao cadastrar";
         }
+    }
+
+
         
         public function deleteAll(){
             $sql = "DELETE from cliente";
+            $con = Conexao::getInstance()->prepare($sql);
+            $con->execute();
+            return "todos excluídos com sucesso";
+        }
+
+        public function deleteFromId($id){
+            $sql = "delete from cliente";
             $con = Conexao::getInstance()->prepare($sql);
             $con->execute();
             return "todos excluídos com sucesso";

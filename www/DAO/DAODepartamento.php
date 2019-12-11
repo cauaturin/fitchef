@@ -7,18 +7,42 @@ use FITCHEF\Model\Departamento;
 
     class DAODepartamento{
 
+    public $lastId;
+
+        
+
         public function cadastrar(Departamento $departamento){
-            $sql = "INSERT INTO departamento
-                VALUES (default, :nome)";
+           
+            $pdo = Conexao::getInstance(); // Cria objeto de conexão
+            $pdo->beginTransaction();// Inicia a transação
+           
+            try{
 
-            $con = Conexao::getInstance()->prepare($sql);
+           $con = $pdo->prepare(
+               "INSERT INTO departamento
+                VALUES (default, :nome)");
+
             $con->bindValue(":nome", $departamento->getNome());
-            
-
             $con->execute();
-            
+
+
+            $this->lastId = $pdo->lastInsertId();
+            $pdo->commit(); // Finaliza a transação
             return "Cadastrado com sucesso";
+
+        }catch(Exception $e){
+            $this->lastId= 0;
+            $pdo->rollback();
+            return "Erro ao cadastrar";
         }
+    }
+    
+    public function deleteFromId($id){
+        $sql = "delete from departamento";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->execute();
+        return "todos excluídos com sucesso";
+    }
 
         public function buscaPorId($id){
             $sql = "SELECT * FROM departamento WHERE pk_departamento = :id";
