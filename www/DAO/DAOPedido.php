@@ -23,15 +23,15 @@ use FITCHEF\Model\Carrinho;
                 );
             
             $con->bindValue(":data_pedido", $pedido->getData());
-            $con->bindValue(":telefone", $pedido->getFrete());
-            $con->bindValue(":email", $pedido->getDias());
-            $con->bindValue(":cpf", $pedido->getCliete()->getId());
+            $con->bindValue(":frete", $pedido->getFrete());
+            $con->bindValue(":dias", $pedido->getDias());
+            $con->bindValue(":fk_cliente", $pedido->getCliente()->getId());
             $con->execute();
             $lastId = $pdo->lastInsertId(); 
 
             $con2 = $pdo->prepare(
                 "INSERT INTO item
-                        VALUES (:fk_produto, :fk_pedido, :quantidade)");
+                        VALUES ( :fk_pedido,:fk_produto, :quantidade)");
                         
             foreach ($carrinho->getItems() as $item){
                 print_r($item->getProduto()->getId());
@@ -41,9 +41,14 @@ use FITCHEF\Model\Carrinho;
                 $con2->execute();
 
             }    
-
-       
-
-      
+            
+            $pdo->commit();
+            $_SESSION['carrinho'] = null;
+            return "Pedido efetuado com sucesso";
+       }catch(Exception $e){
+        $pdo->rollback();
+        return "Erro ao efetuar o pedido";
     }
-?>
+
+      }
+    }

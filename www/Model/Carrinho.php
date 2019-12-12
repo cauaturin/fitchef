@@ -27,13 +27,13 @@ class Carrinho{
  			$dao = new DAOProduto();
             $obj = new Produto();
 			$obj = $dao->buscaPorId($id);
-			
+			 $item = new Item();
             if($obj->getId()){
-                $item = new Item();
+               
                 $item->setProduto($obj);
                 $item->setQuantidade(1);
             };
-		array_push($this->lista,$item);
+		array_push($this->lista, $item);
 	}
 
 	public function removeItem($id){
