@@ -34,7 +34,7 @@ use FITCHEF\Model\Carrinho;
                         VALUES ( :fk_pedido,:fk_produto, :quantidade)");
                         
             foreach ($carrinho->getItems() as $item){
-                print_r($item->getProduto()->getId());
+              
                 $con2->bindValue(":fk_produto", $item->getProduto()->getId());
                 $con2->bindValue("fk_pedido", $lastId);
                 $con2->bindValue("quantidade", $item->getQuantidade());

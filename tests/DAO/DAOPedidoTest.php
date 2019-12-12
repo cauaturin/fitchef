@@ -42,7 +42,7 @@ use FITCHEF\DAO\DAOCliente;
     $this->produto->setDepartamento($this->departamento);
     $DAO2 = new DAOProduto();
     $result = $DAO2->cadastrar($this->produto);
-    $this->produto->setId(18);
+    $this->produto->setId($DAO2->lastId);
 
     // Cria um novo cliente
     $this->cliente = new Cliente();
