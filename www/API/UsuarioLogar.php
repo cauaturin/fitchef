@@ -29,7 +29,7 @@ if($_POST){
             $_SESSION['usuarioid'] = $result['id'];
             $_SESSION['usuarionome'] = $result['nome'];
 
-                header("location: http://localhost/fitchef/painel/adm");
+                header("location:{$url}/painel/adm");
            }else{
                $this->msg = "Usuário/Senha Inválidos";
            }

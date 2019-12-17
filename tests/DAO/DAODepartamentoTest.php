@@ -9,16 +9,7 @@ use FITCHEF\DAO\DAODepartamento;
 class DAODepartamentoTests extends TestCase
 {
 
-    /**
-     * @before
-     */
 
-     public function setUpDeleteAll(){
-         $DAO = new DAODepartamento();
-         $DAO->deleteALL();
-
-
-     }
 
     public function testCadastro()
     {

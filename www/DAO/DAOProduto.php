@@ -133,8 +133,6 @@ use FITCHEF\Model\Produto;
         
         
         FROM produto WHERE fk_departamento_produto =:id";
-
-
         $con = conexao::getInstance()->prepare($sql);
         $con->bindValue(":id", $id);
         $con->execute();

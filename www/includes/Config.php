@@ -14,7 +14,7 @@ class Config{
     public function __construct(){
 
         if($this->servidor == "TEST"){
-            $this->serverHost = "localhost";
+            $this->serverHost = "http://localhost/fitchef/www";
             $this->serverDB = "fitchef";
             $this->serverUser = "root";
             $this->serverPass = "";

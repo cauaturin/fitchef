@@ -144,8 +144,6 @@
             $view = "FRONT-inicio.php";
             break;            
 
-
-
              
         case 'porcoes':
             $obj = new \FITCHEF\API\ProdutoListarPorcoes;
@@ -180,7 +178,7 @@
         case 'produtodetalhes':
             $obj = new \FITCHEF\API\ProdutoVisualizar;
             $produto = $obj->dados;
-            
+
             $view = "visualiza-produto.php";
         break;
 
@@ -209,9 +207,31 @@
         case 'fretecalcular':
             $obj = new \FITCHEF\API\CalcularFrete;
             $frete = $obj->frete;
-
             $view = "FRONT-carrinho.php";
         break;
+
+        
+        case 'pedidofinalizar':
+            \FITCHEF\includes\Seguranca::restritoUsuario();
+            $obj = new \FITCHEF\API\PedidoCadastrar;    
+            $view = "FRONT-logincadastro.php";
+        break;
+        
+        case 'logincliente':
+           $obj = new \FITCHEF\API\ClienteLogar;
+           $msg = $obj->msg;
+           $view ="FRONT-logincadastro.php";
+        break;
+
+        
+        case 'painelcliente':
+            $view ="FRONT-cliente-painel.php";
+            break;   
+       
+        case 'painellogoff';
+            $obj = new \FITCHEF\API\ClienteLogoff;
+            $view = "FRONT-logincadastro.php";
+            break;  
 
 
         default:

@@ -10,8 +10,8 @@ class PedidoCadastrar{
            
      try{
         $c = new Cliente();
-        $c->setId(4); // INSERIR UM ID JÁ EXISTENTE
-        $c->setNome('Daniel');
+        $c->setId($_SESSION['clienteid']); // INSERIR UM ID JÁ EXISTENTE
+        $c->setNome($_SESSION['clientenome']);
     
          $obj = new Pedido();
          //$c->setId();

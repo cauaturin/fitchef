@@ -78,15 +78,20 @@
         </div>
 
         <div class="col-sm-6 container">
-        <?php 
+        <?php
         if(isset($_POST['cep'])){
             echo "<p>Preço: R$ ".$frete->getValor()."</p>";
             echo "<p>Entrega: R$ ".$frete->getPrazoEntrega()." dias</p>";
+            echo '<a href="'.$url.'/pedido/finalizar" class="btn btn-success">Finalizar</a>';
+            
+        }else{
+            echo "<p>Insira o CEP</p>";
+            echo '<a href="'.$url.'/pedido/finalizar" class="btn btn-success disabled">Finalizar</a>';
         }
-        ?>
+    ?>
         </div>
 
-  
+        
 
         </div>
         </div>

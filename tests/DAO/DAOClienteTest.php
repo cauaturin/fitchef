@@ -9,14 +9,6 @@ use FITCHEF\DAO\DAOCliente;
 class DAOClienteTests extends TestCase
 {
 
-    /**
-     * @before
-     */
-
-     public function setUpDeleteAll(){
-         $DAO = new DAOCliente();
-         $DAO->deleteALL();
-     }
     public function testCadastro()
     {       
             //dados

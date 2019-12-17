@@ -5,15 +5,7 @@
     class DAOUsuarioTests extends TestCase
 {
 
-    /** 
-     * @before
-     */
-
-    public function setUpDeleteAll(){
-        $DAO = new DAOUsuario();
-        $DAO->deleteAll();
-    }
-
+  
 
     public function testCadastro()
     {

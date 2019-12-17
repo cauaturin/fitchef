@@ -64,6 +64,10 @@ use FITCHEF\DAO\DAOCliente;
 
    public function testCadastro() // testa o cadastro de produtos
    {
+        
+       $_SESSION['clienteid'] = $this->cliente->getId();
+       $_SESSION['clientenome'] = $this->cliente->getId();
+             
        $_SESSION ['carrinho'] = $this->carrinho;
        $obj = new \FITCHEF\API\PedidoCadastrar;
 

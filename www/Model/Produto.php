@@ -19,6 +19,7 @@ class Produto{
 	}
 
 	public function setId($id){
+		if($id==="") throw new \Exception('Id Inválido');
 		$this->id = $id;
 	}
 
@@ -27,6 +28,7 @@ class Produto{
 	}
 
 	public function setNome($nome){
+		if($nome==="") throw new \Exception('Nome Inválido');
 		$this->nome = $nome;
 	}
 
@@ -35,6 +37,7 @@ class Produto{
 	}
 
 	public function setPreco($preco){
+		if($preco==="") throw new \Exception('Preco Inválido');
 		$this->preco = $preco;
 	}
 
@@ -43,6 +46,7 @@ class Produto{
 	}
 
 	public function setDescricao($descricao){
+		if($endereco==="") throw new \Exception('Endereço Inválido');
 		$this->descricao = $descricao;
 	}
 
@@ -51,6 +55,7 @@ class Produto{
 	}
 
 	public function setImagem($imagem){
+		if($imagem==="") throw new \Exception('imagem Inválida');
 		$this->imagem = $imagem;
 	}
 
@@ -59,6 +64,7 @@ class Produto{
 	}
 
 	public function setDepartamento($departamento){
+		if($departamento==="") throw new \Exception('Departamento Inválido');
 		$this->departamento = $departamento;
 	}
 }

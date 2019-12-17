@@ -9,7 +9,7 @@ class ClienteLogar{
 
     public $msg;
 
-    function __construct($url){
+    function __construct(){
 
 if($_POST){
 
