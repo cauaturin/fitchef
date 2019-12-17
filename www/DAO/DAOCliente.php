@@ -62,7 +62,6 @@ use FITCHEF\Model\Usuario;
 
 
         public function listaClientes(){
-
             $sql = "SELECT * FROM cliente";
             $con = conexao::getInstance()->prepare($sql);
             $con->execute();
@@ -75,6 +74,7 @@ use FITCHEF\Model\Usuario;
 
             return $lista;
         }
+
 
         public function buscaPorId($id){
             $sql = "SELECT * FROM cliente WHERE pk_cliente = :id";
@@ -89,25 +89,19 @@ use FITCHEF\Model\Usuario;
 
         }
 
+
         public function buscaPorNomeSenha(Cliente $cliente){
             $sql = "SELECT * FROM cliente WHERE email = :email AND senha = :senha";
-
-
             $con = Conexao::getInstance()->prepare($sql);
             $con->bindValue(":email", $cliente->getEmail());
             $con->bindValue(":senha", $cliente->getSenha());
             $con->execute();
 
-
-
-
                 $obj = new Usuario();
                 $obj = $con->fetch(\PDO::FETCH_ASSOC);
                 return $obj;
            
-            
         }
-
       
     }
 ?>
