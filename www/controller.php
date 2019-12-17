@@ -183,16 +183,12 @@
         break;
 
         case 'carrinhoadicionar':
-
             $obj = new \FITCHEF\API\CarrinhoVisualizar;
-
             $view = "FRONT-carrinho.php";
         break;
 
-        case 'carrinhoremover':
-        
+        case 'carrinhoremover':        
             $obj = new \FITCHEF\API\CarrinhoRemover;
-           
             $view = "FRONT-carrinho.php";
         break;
 
